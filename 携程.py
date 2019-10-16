@@ -62,7 +62,7 @@ if __name__=='__main__':
         sleeptime=sleeps
     else:
         sleeptime=15
-    if keyword=='y' or 'Y':
+    if keyword=='y' or keyword=='Y':
         key=True
     else:
         key=False
