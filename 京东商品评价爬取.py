@@ -1,5 +1,5 @@
-#ÓÉÓÚĞ­³Ì±¾ÉíÊÇÂÒĞòµÄ£¬I/O×èÈû´æÔÚ£¬ÎŞ·¨±£Ö¤Ğ´ÈëµÃÆÀ¼ÛÊÇÁ¬ĞøµÄ
-#jsÆÆ½âÎÄ¼şÔÚÎÒJSÏîÄ¿Àï
+#ç”±äºåç¨‹æœ¬èº«æ˜¯ä¹±åºçš„ï¼ŒI/Oé˜»å¡å­˜åœ¨ï¼Œæ— æ³•ä¿è¯å†™å…¥å¾—è¯„ä»·æ˜¯è¿ç»­çš„
+#jsç ´è§£æ–‡ä»¶åœ¨æˆ‘JSé¡¹ç›®é‡Œ
 
 
 # coding=gbk
@@ -97,22 +97,22 @@ def comment_json(key):
                 pjtime=n.get('creationTime')
                 idname=n.get('id')
                 commodity=n.get('referenceName')
-                dat='{}{}{}{}'.format('\nÉÌÆ·£º'+commodity,'   ÓÃ»§id£º'+str(idname),'   ÆÀ¼ÛÄÚÈİ£º'+str(pj),'    ÆÀ¼ÛÊ±¼ä£º'+str(pjtime))
+                dat='{}{}{}{}'.format('\nå•†å“ï¼š'+commodity,'   ç”¨æˆ·idï¼š'+str(idname),'   è¯„ä»·å†…å®¹ï¼š'+str(pj),'    è¯„ä»·æ—¶é—´ï¼š'+str(pjtime))
                 save(dat)
         except AttributeError:
-            print('ÎŞÆÀ¼Û')
+            print('æ— è¯„ä»·')
             pass
 
 
 def save(data):
-    with open('¾©¶«ÆÀ¼Û²É¼¯.csv','a+',encoding='utf-8')as f:
+    with open('äº¬ä¸œè¯„ä»·é‡‡é›†.csv','a+',encoding='utf-8')as f:
         f.write(data)
 
 
 
 if __name__=="__main__":
-    pvid=get_js_function(r'C:\Users\zjy\WebstormProjects\untitled\¾©¶«ÉÌÆ·¼ìË÷JSÆÆ½â.js','genPvid')
-    ks=get_html('²èÒ¶',pvid,5)
+    pvid=get_js_function(r'C:\Users\zjy\WebstormProjects\untitled\äº¬ä¸œå•†å“æ£€ç´¢JSç ´è§£.js','genPvid')
+    ks=get_html('èŒ¶å¶',pvid,5)
     print(ks)
     time_begin = time.time()
     g_list = []
