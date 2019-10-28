@@ -1,6 +1,6 @@
 # coding=gbk
-#±¾À´ÏëÓÃseleniumµÇÂ½¾©¶«£¬ÀûÓÃCV2Ê¶±ğ³ö¾àÀëºó£¬È´ËÀÔÚ»¬¿éÍÏ¶¯ÉÏ£¬ÓÃÁËÁ½¸ö·½·¨¶¼Ã»ÄÜ¹ı¾©¶«µÄÊ¶±ğ£¨Ó¦¸Ã²»ÊÇwebdriver±»Ê¶±ğµ¼ÖÂµÄ£¬ÎÒÊÖ¶¯ÊÔ¹ı¿ÉÒÔÑéÖ¤³É¹¦£©
-#Èç¹ûÓĞ°ì·¨ÎÒ»áÖØĞÂÉÏ´«£¬´Ë´úÂëÄ¿Ç°ÎŞ·¨¹ı¾©¶«Ê¶±ğ£¬²Î¿¼×÷ÓÃ
+#æœ¬æ¥æƒ³ç”¨seleniumç™»é™†äº¬ä¸œï¼Œåˆ©ç”¨CV2è¯†åˆ«å‡ºè·ç¦»åï¼Œå´æ­»åœ¨æ»‘å—æ‹–åŠ¨ä¸Šï¼Œç”¨äº†ä¸¤ä¸ªæ–¹æ³•éƒ½æ²¡èƒ½è¿‡äº¬ä¸œçš„è¯†åˆ«ï¼ˆåº”è¯¥ä¸æ˜¯webdriverè¢«è¯†åˆ«å¯¼è‡´çš„ï¼‰
+#ç¬¬ä¸€ç§æ¨¡æ‹Ÿæ»‘åŠ¨æ–¹æ³•æœ‰å‡ ç‡æˆåŠŸï¼Œä¸€èˆ¬åœ¨å‰ä¸¤æ¬¡éƒ½ä¼šæˆåŠŸï¼Œå¦‚æœè¿ç»­ä½¿ç”¨ä¸€ç§æ»‘åŠ¨æ–¹æ³•å°±ä¼šè¢«è¯†åˆ«
 
 from selenium import webdriver
 import time
@@ -17,10 +17,10 @@ def selenuim_moni():
     option.add_experimental_option('excludeSwitches', ['enable-automation'])
     brow=webdriver.Chrome(options=option)
     brow.get('https://passport.jd.com/new/login.aspx?')
-    click1=brow.find_element_by_xpath('//*[@id="content"]/div[2]/div[1]/div/div[3]').click()
-    name=brow.find_element_by_id('loginname').send_keys('17352910858')
-    passwd=brow.find_element_by_id('nloginpwd').send_keys('zjy19970927')
-    click2=brow.find_element_by_id('loginsubmit').click()
+    brow.find_element_by_xpath('//*[@id="content"]/div[2]/div[1]/div/div[3]').click()
+    brow.find_element_by_id('loginname').send_keys('name')
+    brow.find_element_by_id('nloginpwd').send_keys('password')
+    brow.find_element_by_id('loginsubmit').click()
     time.sleep(2)
     button=brow.find_element_by_xpath('//*[@id="JDJRV-wrap-loginsubmit"]/div/div/div/div[2]/div[3]')
     bj=brow.find_element_by_xpath('//div[@class="JDJRV-bigimg"]/img')
@@ -59,7 +59,7 @@ def get_distance(bj,hk):
     return y*(278/360)
 
 
-def move_mouse(browser,distance,element):#µÚÒ»ÖÖ¹ì¼£Ä£Äâ·½·¨£¨Èı¶ÎËæ»úËÙ¶È£©
+def move_mouse(browser,distance,element):#ç¬¬ä¸€ç§è½¨è¿¹æ¨¡æ‹Ÿæ–¹æ³•ï¼ˆä¸‰æ®µéšæœºé€Ÿåº¦ï¼‰æˆåŠŸå‡ ç‡é«˜
     has_gone_dist=0
     remaining_dist = distance
     ActionChains(browser).click_and_hold(element).perform()
@@ -79,7 +79,7 @@ def move_mouse(browser,distance,element):#µÚÒ»ÖÖ¹ì¼£Ä£Äâ·½·¨£¨Èı¶ÎËæ»úËÙ¶È£©
     ActionChains(browser).move_by_offset(remaining_dist, random.randint(-5, 5)).perform()
     ActionChains(browser).release(on_element=element).perform()
 
-def get_tracks(browser,distance,element): #µÚ¶şÖÖ¹ì¼£Ä£Äâ·½·¨£¨ÏÈÂıºó¿ì£¬×îºó·´·½ÏòÍÏ¶¯£¬Ä£·ÂÈËÀàĞĞÎª£©
+def get_tracks(browser,distance,element): #ç¬¬äºŒç§è½¨è¿¹æ¨¡æ‹Ÿæ–¹æ³•ï¼ˆå…ˆæ…¢åå¿«ï¼Œæœ€ååæ–¹å‘æ‹–åŠ¨ï¼Œæ¨¡ä»¿äººç±»è¡Œä¸ºï¼‰æˆåŠŸå‡ ç‡ä¸€èˆ¬
     distance += 8
     v = 0
     t = 0.3
