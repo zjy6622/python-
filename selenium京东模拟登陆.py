@@ -1,6 +1,6 @@
 # coding=gbk
 #本来想用selenium登陆京东，利用CV2识别出距离后，却死在滑块拖动上，用了两个方法都没能过京东的识别（应该不是webdriver被识别导致的）
-#第一种模拟滑动方法有几率成功，第一种在前两次都会成功，如果连续使用一种滑动方法会被识别就会被识别
+#第一种模拟滑动方法有几率成功，一般在前两次都会成功，如果连续使用一种滑动方法就会被识别
 
 from selenium import webdriver
 import time
@@ -17,10 +17,10 @@ def selenuim_moni():
     option.add_experimental_option('excludeSwitches', ['enable-automation'])
     brow=webdriver.Chrome(options=option)
     brow.get('https://passport.jd.com/new/login.aspx?')
-    click1=brow.find_element_by_xpath('//*[@id="content"]/div[2]/div[1]/div/div[3]').click()
-    name=brow.find_element_by_id('loginname').send_keys('name')
-    passwd=brow.find_element_by_id('nloginpwd').send_keys('password')
-    click2=brow.find_element_by_id('loginsubmit').click()
+    brow.find_element_by_xpath('//*[@id="content"]/div[2]/div[1]/div/div[3]').click()
+    brow.find_element_by_id('loginname').send_keys('name')
+    brow.find_element_by_id('nloginpwd').send_keys('password')
+    brow.find_element_by_id('loginsubmit').click()
     time.sleep(2)
     button=brow.find_element_by_xpath('//*[@id="JDJRV-wrap-loginsubmit"]/div/div/div/div[2]/div[3]')
     bj=brow.find_element_by_xpath('//div[@class="JDJRV-bigimg"]/img')
