@@ -600,8 +600,6 @@ class dl_12306:
         except:
             print('订票失败')
     def main(self):
-        # op=dl_12306(name='15256442285',password='abandon1996')
-        # op = dl_12306(name='z731068380', password='zjy19970927')
         try:
             if self.yz:
                 self.get_code()
