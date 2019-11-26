@@ -50,7 +50,7 @@ class dl_12306:
         resp = self.session.get(url=url)
         with open(r'C:\Users\zjy\Desktop\s.png', 'wb')as f:
             f.write(resp.content)
-        chaojiying = Chaojiying_Client('zjy6622', 'zjy19970927', '901769')
+        chaojiying = Chaojiying_Client('', '', '901769')
         im = open(r'C:\Users\zjy\Desktop\s.png', 'rb').read()
         print("---------等待code识别---------")
         codes = chaojiying.PostPic(im, 9008)
